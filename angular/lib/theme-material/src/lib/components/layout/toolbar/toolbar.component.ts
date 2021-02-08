@@ -1,6 +1,7 @@
 import {
   ApplicationConfiguration,
   AuthService,
+  RoutesService,
   SessionStateService,
 } from '@abpdz/ng.core';
 import {
@@ -30,7 +31,9 @@ export class ToolbarComponent implements OnInit {
 
   constructor(
     public session: SessionStateService,
-    public authService: AuthService
+    public authService: AuthService,
+
+    public readonly routes: RoutesService
   ) {
     this.dropdownLanguages$ = combineLatest([
       this.session.languages$,

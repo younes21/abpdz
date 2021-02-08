@@ -44,7 +44,6 @@ export class BaseCrudComponent<datatype> extends BaseAsyncComponent {
   dialogEdit(entity: Partial<datatype>) {
     this.dataSource.current.next(entity as any);
     if (this.editForm != null) {
-      console.log(entity);
       this.editForm.reset(entity);
     }
     this.dialogRef = this.dialog.open(this.template, {

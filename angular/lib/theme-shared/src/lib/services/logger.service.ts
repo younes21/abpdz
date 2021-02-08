@@ -46,7 +46,10 @@ export class LoggerService implements ILogger {
   Success(message) {
     this.toastr.success(this.extractStringError(message));
   }
-  warning(message) {
+  Info(message) {
+    this.toastr.info(this.extractStringError(message));
+  }
+  Warning(message) {
     this.toastr.warning(this.extractStringError(message));
   }
 
@@ -87,7 +90,7 @@ export class LoggerService implements ILogger {
           const k = JSON.parse(e.response);
           e = k.error || k;
         } catch (er) {
-          return e.response;
+          e = e.response;
         }
       }
     }
